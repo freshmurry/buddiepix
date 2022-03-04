@@ -45,8 +45,8 @@
       <div class="row">
         <ul class="posts">
           <li><span><%= @posts.count %></span> Posts</li>
-          <li><span><%= @user.followers_count %></span> Followers</li>
-          <li><span><%= @user.follow_count %></span> Following</li>
+          <li><span><%= link_to @user.followers_count %></span> Followers</li>
+          <li><span><%= link_to @user.follow_count %></span> Following</li>
         </ul>
       </div>
       

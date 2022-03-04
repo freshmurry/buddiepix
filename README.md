@@ -10,6 +10,7 @@ This is source code for the course: [How to build Instagram using Ruby on Rails]
 
 ## Demo
 Here is a working live demo: https://longram.herokuapp.com/
+Here is a working live demo (with Follow/Unfollow feature): https://instafakeapp.herokuapp.com/
 
 ## Site
 

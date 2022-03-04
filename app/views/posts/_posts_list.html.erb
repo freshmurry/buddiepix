@@ -70,7 +70,7 @@
       
       <%= link_to time_ago_in_words(post.created_at).upcase + " AGO", post_path(post),
         class: "light-color post-time no-text-decoration" %>
-      <hr>
+
       <div class="row actions" id="comment-form-post-<%= post.id.to_s %>">
         <%= render 'comment_form', {post: post} %>
       </div>

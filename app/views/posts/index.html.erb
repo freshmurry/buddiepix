@@ -1,18 +1,21 @@
 <!-- HOMEPAGE POST AND IMAGE UPLOADING FUNCTION -->
 <div class="d-flex flex-column align-items-center mt-3">
-  <div class="col-lg-8 col-md-10 col-sm-11 post-card">
-    <!--<div class="">-->
-      <div class="">Create Post</div>
-      <div class="">
+  <div class="">
+    <div class="card">
+      <div class="card-header">
+        Create Post
+      </div>
+      <div class="card-body">
         <%= form_for @post, :html => {:multipart => true, :class => "dropzone upload-images p-0 border-0"} do |f| %>
-          <!--<div class="form-group row mt-2">-->
-            <!--<div class="col-auto pr-0">-->
+          <div class="form-group">
+            <div class="">
               <%= image_tag avatar_url(current_user), class: "post-author-icon" %>
-            <!--</div>-->
-            <div class="col pl-0">
-              <%= f.text_field :content, class: "form-control border-0", placeholder: "Say something about this ..." %>
             </div>
-          <!--</div>-->
+            <div class="">
+              <%= f.text_field :content, class: "form-control border-0", placeholder: "Say something about this ..." %>
+              <!--<textarea rows="2" placeholder="Say something about this" class="form-control border-0"></textarea>  -->
+            </div>
+          </div>
           <div class="fallback">
             <%= file_field_tag "images[]", type: :file, multiple: true %>
           </div>
@@ -25,12 +28,12 @@
           <%= f.submit "Post", class: "btn btn-primary" %>
         <% end %>
       </div>
-    <!--</div>-->
+    </div>
+
+    <div id="posts">
+      <%= render 'posts_list' %>
+    </div>
   </div>
-    
-  <div id="posts">
-    <%= render 'posts_list' %>
-  </div>
+  <br>
+  <%= will_paginate @posts %>
 </div>
-<br>
-<%= will_paginate @posts %>

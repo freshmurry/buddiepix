@@ -21,12 +21,12 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :items do
-    member do
-      post 'vote', to: 'votes#create'
-      delete 'unvote', to: 'votes#destroy'
-    end
-  end
+  # resources :items do
+  #   member do
+  #     post 'vote', to: 'votes#create'
+  #     delete 'unvote', to: 'votes#destroy'
+  #   end
+  # end
 
   get "about" => "pages#about" #creates about_path
   get "support" => "pages#support"

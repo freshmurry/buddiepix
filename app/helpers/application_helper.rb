@@ -1,10 +1,9 @@
 # module ApplicationHelper
-#   def avatar_url user
-#     return user.image if user.image
-#     gravatar_id = Digest::MD5::hexdigest(user.email).downcase
-#     "https://www.gravatar.com/avatar/#{gravatar_id}.jpg"
-#   end
-# end
+  # def avatar_url user
+  #   return user.image if user.image
+  #   gravatar_id = Digest::MD5::hexdigest(user.email).downcase
+  #   "https://www.gravatar.com/avatar/#{gravatar_id}.jpg"
+  # end
 
 module ApplicationHelper
   def avatar_url(user)
@@ -16,7 +15,22 @@ module ApplicationHelper
       'default_avatar.png'
     end
   end
-
+  
+  private
+  
+  def add_default_avatar
+    unless avatar_url.attached?
+      avatar.attch(
+        io: File.open(
+          Rails.root.join(
+            'app', 'assets', 'images', 'default_avatar.png'
+          )
+        ), filename: 'default_avatar.png',
+        content_type: 'image/jpg'
+      )
+    end
+  end
+  
   def gravatar?(user)
     gravatar = Digest::MD5::hexdigest(user.email).downcase
     gravatar_check = "http://gravatar.com/avatar/#{gravatar}.png?d=404"

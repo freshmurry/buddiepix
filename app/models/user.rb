@@ -6,17 +6,17 @@ class User < ApplicationRecord
   has_many :bookmarks
   has_many :follows
 
-  
-  # has_one_attached :avatar
-
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: %i[facebook]
 
+  # has_one_attached :avatar
+  has_attached_file :avatar
+  
   validates :name, presence: true, length: {maximum: 50}
-
+  
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email

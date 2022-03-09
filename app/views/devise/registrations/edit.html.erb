@@ -13,7 +13,8 @@
   
         <div class="row username-img">
           <div class="col-sm-3">
-            <%= image_tag avatar_url(@user), width: '72', height: '72', class: "round-img" %>
+            <!--<= image_tag image(@user), width: '72', height: '72', class: "round-img" %>-->
+            <%= image_tag @user.image.url(), width: '72', height: '72', class: "round-img" %>
           </div>
           
           <div class="col-sm-9">
@@ -24,7 +25,8 @@
         <div class="form-group row">
           <%= f.label :image, class: 'col-sm-3 col-form-label font-weight-bold' %>
           <div class="col-sm-9">
-            <%= f.file_field avatar_url(@user), type: :file %>
+            <!--user.avatar.attached?-->
+            <%= f.file_field :image %>
           </div>
         </div>
   

@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  
+  has_attached_file :image, service: :s3, :styles => { :medium => "300x300>", :thumb => "100x100#" }, :default_url => "/images/:style/default_avatar.png"
+  validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
   has_many :posts, dependent: :destroy
   has_many :likes
@@ -11,9 +14,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: %i[facebook]
-
-  # has_one_attached :avatar
-  has_attached_file :avatar
   
   validates :name, presence: true, length: {maximum: 50}
   

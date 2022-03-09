@@ -9,7 +9,7 @@
         <%= form_for @post, :html => {:multipart => true, :class => "dropzone upload-images p-0 border-0"} do |f| %>
           <div class="form-group">
             <div class="">
-              <%= image_tag avatar_url(current_user), class: "post-author-icon" %>
+              <%= image_tag  current_user.image.url(@post.user), class: "post-author-icon" %>
             </div>
             <div class="">
               <%= f.text_field :content, class: "form-control border-0", placeholder: "Say something about this ..." %>

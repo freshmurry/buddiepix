@@ -8,7 +8,7 @@
       <span>
         <div class="">
           <%= link_to user_path(current_user) do %>
-            <%= image_tag image(current_user), class: "post-author-icon" %>
+            <%= image_tag comment.user.image.url(), class: "post-author-icon" %>
           <% end %>
           <strong>
             <%= link_to comment.user.username, user_path(comment.user), class: "no-text-decoration normal-color" %>

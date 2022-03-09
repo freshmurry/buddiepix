@@ -22,13 +22,10 @@ module ApplicationHelper
   
   def add_default_avatar
     unless image.attached?
-      avatar.attch(
-        io: File.open(
-          Rails.root.join(
-            'app', 'assets', 'images', 'default_avatar.png'
-          )
-        ), filename: 'default_avatar.png',
-        content_type: 'image/jpg'
+      image.attach(
+        io: File.open('/path/to/file'),
+        filename: 'default_avatar.png',
+        content_type: 'image/png'
       )
     end
   end

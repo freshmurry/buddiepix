@@ -31,4 +31,13 @@ class UsersController < ApplicationController
     user.image.attach(params[:image])
     redirect_to current_user
   end
+  
+  private
+
+  # Use strong_parameters for attribute whitelisting
+  # Be sure to update your create() and update() controller methods.
+  
+  def user_params
+    params.require(:user).permit(:image)
+  end
 end

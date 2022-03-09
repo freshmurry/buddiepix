@@ -1,8 +1,8 @@
 class User < ApplicationRecord
   
-  has_attached_file :image, service: :s3, :styles => { :medium => "300x300>", :thumb => "100x100#" }, :default_url => "/images/:style/default_avatar.png"
+  has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/app/images/:style/default_avatar.png"
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
-
+  
   has_many :posts, dependent: :destroy
   has_many :likes
   has_many :comments
@@ -16,7 +16,8 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: %i[facebook]
   
   validates :name, presence: true, length: {maximum: 50}
-  
+  validates :image, presence: true
+
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email

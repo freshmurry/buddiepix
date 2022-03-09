@@ -15,21 +15,20 @@ class UsersController < ApplicationController
       includes(:photos, :likes, :comments) if @user == current_user
   end
   
-  def edit
-  end
+  # def edit
+  # end
 
-  def update
-    current_user.update(user_params)
-    # user.image.attach(params[:image])
-    redirect_to current_user
-  end
+  # def update
+  #   current_user.update(user_params)
+  #   redirect_to current_user
+  # end
   
-  private
+  # private
 
   # Use strong_parameters for attribute whitelisting
   # Be sure to update your create() and update() controller methods.
   
-  def user_params
-    params.require(:user).permit(:image, :image_file_name)
-  end
+  # def user_params
+  #   params.require(:user).permit(:image, :image_file_name)
+  # end
 end

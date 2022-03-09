@@ -4,7 +4,9 @@ First, let me start by saying that I pieced this app together using a few differ
 
 The majority of the code seen here was forked from: https://github.com/truongnmt/instagram-clone. However, I was able to integrate a few additions such as:
 
-<li>Added view for "Post, Followwers, and Following" on user's profile page</li> 
+<li>Added count and links for "Posts, Followers, and Following" on user's profile page</li> 
+<li>Added the ability to a link to your website (currently not working)</li> 
+<li>Added the ability to update and upload a profile photo</li> 
 
 This is source code for the course: [How to build Instagram using Ruby on Rails](https://www.udemy.com/course/1648774/) 
 
@@ -46,9 +48,6 @@ To fix a bug or enhance an existing module, follow these steps:
 ### Bug / Feature Request
 
 If you find a bug, kindly open an issue [here](https://github.com/truongnmt/instagram-udemy/issues/new).
-
-If you'd like to request a new function, feel free to do so by opening an issue [here](https://github.com/truongnmt/instagram-udemy/issues/new). Please include sample queries and their corresponding results.
-
 
 ## Built with
 - Ruby 2.5

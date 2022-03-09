@@ -15,13 +15,13 @@ class UsersController < ApplicationController
       includes(:photos, :likes, :comments) if @user == current_user
   end
   
-  # def edit
-  # end
+  def edit
+  end
 
-  # def update
-  #   current_user.update(user_params)
-  #   redirect_to current_user
-  # end
+  def update
+    current_user.update(user_params)
+    redirect_to current_user
+  end
   
   private
 

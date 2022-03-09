@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   
-  has_attached_file :image, service: :s3, :styles => { :medium => "300x300>", :thumb => "100x100#" }, :default_url => "/images/:style/default_avatar.png"
-  validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
+  has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/default_avatar.png"
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
   
   has_many :posts, dependent: :destroy
   has_many :likes

@@ -17,13 +17,6 @@ class UsersController < ApplicationController
   end
   
   def edit
-    # @user = User.find(params[:user_id])
-
-    # if params[:images]
-    #     params[:images].each do |img|
-    #     @user.photos.create(image: img)
-    #   end
-    # end
   end
 
   def update
@@ -38,6 +31,6 @@ class UsersController < ApplicationController
   # Be sure to update your create() and update() controller methods.
   
   def user_params
-    params.require(:user).permit(:image)
+    params.require(:user).permit(:image, :image_file_name)
   end
 end

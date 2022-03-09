@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  attr_accessor :image_file_name
+  
   has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "assets/images/:style/default_avatar.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
   
@@ -16,7 +16,7 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: %i[facebook]
   
   validates :name, presence: true, length: {maximum: 50}
-  validates :image, presence: true
+  # validates :image, presence: true
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

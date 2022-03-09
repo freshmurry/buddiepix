@@ -17,11 +17,18 @@ class UsersController < ApplicationController
   end
   
   def edit
+    # @user = User.find(params[:user_id])
+
+    # if params[:images]
+    #     params[:images].each do |img|
+    #     @user.photos.create(image: img)
+    #   end
+    # end
   end
 
   def update
     current_user.update(user_params)
-    user.image.attach(params[:image])
+    # user.image.attach(params[:image])
     redirect_to current_user
   end
   

@@ -1,13 +1,13 @@
 module ApplicationHelper
   def image(user)
     if user.image
-      'default_avatar.png'
+      return user.image
     elsif
       gravatar_id = Digest::MD5::hexdigest(user.email).downcase
       "https://www.gravatar.com/avatar/#{gravatar_id}.jpg?d=identical&s=150"
     else
       def image(user)
-        return user.image
+        'default_avatar.png'
       end
     end
   end

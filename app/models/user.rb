@@ -1,15 +1,4 @@
 class User < ApplicationRecord
-    
-  has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100#" }
-#   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
-  attr_accessor :processors
-    
-  has_many :posts, dependent: :destroy
-  has_many :likes
-  has_many :comments
-  has_many :bookmarks
-  has_many :follows
-
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -17,7 +6,13 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: %i[facebook]
   
   validates :name, presence: true, length: {maximum: 50}
-  validates :image, presence: true
+  
+  has_attached_file :image  
+  has_many :posts, dependent: :destroy
+  has_many :likes
+  has_many :comments
+  has_many :bookmarks
+  has_many :follows
   
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

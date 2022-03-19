@@ -29,6 +29,6 @@ class UsersController < ApplicationController
   # Be sure to update your create() and update() controller methods.
   
   def user_params
-    params.require(:user).permit(:image, :image_file_name)
+    params.require(:user).permit([:image_file_name, :image_file_size, :image_content_type, :image_updated_at])
   end
 end

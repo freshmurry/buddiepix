@@ -11,8 +11,8 @@ gem 'bootstrap', '~> 4.0.0'
 # image resizing
 gem 'mini_magick'
 
-# gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
-gem 'paperclip', '~> 5.1.0'
+gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+# gem 'paperclip', '~> 5.1.0'
 gem 'aws-sdk', '< 3.0'
 gem 'aws-sdk-s3', '~> 1'
 gem 'coffee-rails', '~> 4.2'

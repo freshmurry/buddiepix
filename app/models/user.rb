@@ -6,9 +6,14 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: %i[facebook]
   
   validates :name, presence: true, length: {maximum: 50}
+  validates :image, attachment_presence: true
   has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
   
+  # has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+  # validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
+  
+  attr_accessor :image_file_name
   has_many :posts, dependent: :destroy
   has_many :likes
   has_many :comments

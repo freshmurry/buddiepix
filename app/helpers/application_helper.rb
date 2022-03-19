@@ -7,7 +7,7 @@ module ApplicationHelper
       "https://www.gravatar.com/avatar/#{gravatar_id}.jpg?d=identical&s=150"
     else
       def image(user)
-        'default_avatar.png'
+        'missing.png'
       end
     end
   end

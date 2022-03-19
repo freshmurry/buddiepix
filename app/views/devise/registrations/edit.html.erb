@@ -24,9 +24,9 @@
         
         <div class="form-group row">
           <%= f.label :image, class: 'col-sm-3 col-form-label font-weight-bold' %>
-          <div class="col-sm-9">
+          <div class="col-sm-6">
             <!--user.avatar.attached?-->
-            <%= f.file_field :image, type: :file %>
+            <%= f.file_field :image, class: "btn btn-default form-control" %>
           </div>
         </div>
   
@@ -53,8 +53,8 @@
   
         <div class="form-group row">
           <%= f.label :bio, class: "col-sm-3 col-form-label font-weight-bold" %>
-          <div class="col-sm-9">
-            <%= f.text_field :bio, class: "form-control col-sm-9" %>
+          <div class="col-sm-6">
+            <%= f.text_area :bio, class: "form-control" %>
           </div>
         </div>
   

@@ -41,7 +41,15 @@
       <% if @post.content.present? %>
         <div>
           <span><strong><%= @post.user.username %></strong></span>
-          <span><%= @post.content %></span>
+          <span>
+            <% @post.content.to_s.split(' ').each do |word| %>
+              <% if word.start_with?('#') %>
+                <%= link_to word, search_path(query: word) %>
+              <% else %>
+                <%= word %>
+              <% end %>
+            <% end %>
+          </span>
         </div>
       <% end %>
         <!-- load comment -->

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210213075240) do
+ActiveRecord::Schema.define(version: 20220320152234) do
 
   create_table "bookmarks", force: :cascade do |t|
     t.integer "post_id"
@@ -133,5 +133,4 @@ ActiveRecord::Schema.define(version: 20210213075240) do
     t.index ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope"
     t.index ["voter_type", "voter_id"], name: "index_votes_on_voter_type_and_voter_id"
   end
-
 end

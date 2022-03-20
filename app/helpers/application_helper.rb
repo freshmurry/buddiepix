@@ -1,16 +1,16 @@
 module ApplicationHelper
-  def image(user)
-    if user.image
-      return user.image
-    elsif
-      gravatar_id = Digest::MD5::hexdigest(user.email).downcase
-      "https://www.gravatar.com/avatar/#{gravatar_id}.jpg?d=identical&s=150"
-    else
-      def image(user)
-        'missing.png'
-      end
-    end
-  end
+  # def image(user)
+  #   if user.image
+  #     return user.image
+  #   elsif
+  #     gravatar_id = Digest::MD5::hexdigest(user.email).downcase
+  #     "https://www.gravatar.com/avatar/#{gravatar_id}.jpg?d=identical&s=150"
+  #   else
+      # def image(user)
+      #   'missing.png'
+      # end
+    # end
+  # end
   
   def gravatar?(user)
     gravatar = Digest::MD5::hexdigest(user.email).downcase

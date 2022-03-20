@@ -7,6 +7,5 @@ class AddAttachmentImageToUsers < ActiveRecord::Migration[5.1]
 
   def self.down
     remove_attachment :users, :image 
-    t.foreign_key
   end
 end

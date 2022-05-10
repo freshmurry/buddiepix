@@ -63,12 +63,12 @@ Rails.application.configure do
   
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  config.action_cable.url = "ws://db98df6ec33e4ac3b13116d9ecbd6467.vfs.cloud9.us-east-1.amazonaws.com//cable"
+  config.action_cable.url = "ws://3a7580891e8e406480183a82194c3f1b.vfs.cloud9.us-east-1.amazonaws.com///cable"
   
   config.web_console.whitelisted_ips << "10.240.0.0/16"
   
   #Required for Heroku
-  config.action_mailer.default_url_options = { host: 'https://db98df6ec33e4ac3b13116d9ecbd6467.vfs.cloud9.us-east-1.amazonaws.com/'}
+  config.action_mailer.default_url_options = { host: 'https://3a7580891e8e406480183a82194c3f1b.vfs.cloud9.us-east-1.amazonaws.com'}
 
   # config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 end

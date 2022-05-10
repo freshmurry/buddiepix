@@ -13,37 +13,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
     
-    <title>FreshMurry • Capture, edit & share photos, videos & messages with friends & family</title>
+    <title>BuddiePix • Capture, edit & share photos, videos & messages with friends & family</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
-    <%= display_meta_tags site: 'FreshMurry • Capture & share photos with friends & family.',
-                          keywords: %w[Photo Sharing, Fake Instgram, Instafake, Finsta],
-                          description: "Create an account or log in to FreshMurry - A simple, fun & creative way to capture & share photos, videos & messages with friends & family."%>
+    <%= display_meta_tags site: 'BuddiePix • Capture & share photos with friends & family.',
+                          keywords: %w[Photo Sharing, Fake Instgram, Finsta],
+                          description: "Create an account or log in to BuddiePix - A simple, fun & creative way to capture & share photos, videos & messages with friends & family."%>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   	<meta name="author" content="FreshMurry" />
+   	<meta name="author" content="BuddiePix" />
     <meta name="keywords" content="photo sharing app, finsta" />
-    <meta name="description" content="FreshMurry • Capture & share photos with friends & family.">
+    <meta name="description" content="BuddiePix • Capture & share photos with friends & family.">
     <meta name="google-site-verification" content="" />
-    <meta property="og:url" content="http://freshmurry.com" />
-    <meta property="og:title" content="FreshMurry | Photo Sharing Website"/>
-    <meta property="og:description" content="FreshMurry • Capture & share photos with friends & family.." />
+    <meta property="og:url" content="http://BuddiePix.com" />
+    <meta property="og:title" content="BuddiePix | Photo Sharing Website"/>
+    <meta property="og:description" content="BuddiePix • Capture & share photos with friends & family.." />
     <meta property="og:type" content="website"/>
     <meta property="og:locale" content="en_US" />
     <meta property="og:image" content="https://www.winzip.com/static/wz/images/learn/features/photo-sharing/photo-sharing.png" />
     
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:url" content="http://freshmurry.com">
-    <meta name="twitter:title" content="FreshMurry" />
-    <meta property="twitter:description" content="FreshMurry • Capture & share photos with friends & family." />
+    <meta name="twitter:url" content="http://BuddiePix.com">
+    <meta name="twitter:title" content="BuddiePix" />
+    <meta property="twitter:description" content="BuddiePix • Capture & share photos with friends & family." />
     <meta name="twitter:image" content="https://www.winzip.com/static/wz/images/learn/features/photo-sharing/photo-sharing.png" />
     
     <meta name="facebook:card" content="summary" />
-    <meta name="facebook:url" content="http://freshmurry.com">
+    <meta name="facebook:url" content="http://BuddiePix.com">
     <meta property="fb:app_id" content="" />
-    <meta name="facebook:title" content="FreshMurry • Capture & Share Photos" />
-    <meta property="facebook:description" content="FreshMurry • Capture & share photos with friends & family." />
+    <meta name="facebook:title" content="BuddiePix • Capture & Share Photos" />
+    <meta property="facebook:description" content="BuddiePix • Capture & share photos with friends & family." />
     <meta name="facebook:image" content="https://www.winzip.com/static/wz/images/learn/features/photo-sharing/photo-sharing.png" />
     <meta property="og:image:alt" content="Photo Sharing Website" />
     <meta name="" content="" />
@@ -56,20 +56,28 @@
     <%= favicon_link_tag 'icon.jpg' %>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130444419-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'UA-130444419-1');
-    </script>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-V6MYWBNL7T"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+      
+        gtag('config', 'G-V6MYWBNL7T');
+      </script>
+    <!-- End Global site tag (gtag.js) - Google Analytics -->
   </head>
 
   <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KXVBJRG"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+     <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-V6MYWBNL7T"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+      
+        gtag('config', 'G-V6MYWBNL7T');
+      </script>
     <!-- End Google Tag Manager (noscript) -->
 
     <%= render 'shared/navbar' if current_user %>
@@ -87,28 +95,6 @@
     <% end %>
     
     <%= render 'shared/footer' %>
-
-    <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId      : '{929873474178356}',
-          cookie     : true,
-          xfbml      : true,
-          version    : '{8.0}'
-        });
-          
-        FB.AppEvents.logPageView();   
-          
-      };
-    
-      (function(d, s, id){
-         var js, fjs = d.getElementsByTagName(s)[0];
-         if (d.getElementById(id)) {return;}
-         js = d.createElement(s); js.id = id;
-         js.src = "https://connect.facebook.net/en_US/sdk.js";
-         fjs.parentNode.insertBefore(js, fjs);
-       }(document, 'script', 'facebook-jssdk'));
-    </script>
 
   </body>
 </html>
